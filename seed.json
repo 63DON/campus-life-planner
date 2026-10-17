@@ -1,1 +1,15 @@
+[
+{"id":"task_0001","title":"Submit lab report","dueDate":"2024-02-29","duration":90,"tag":"Lab","createdAt":"2026-10-01T09:00:00.000Z","updatedAt":"2026-10-01T09:00:00.000Z"},
+{"id":"task_0002","title":"Read chapter 5 & take notes","dueDate":"2025-12-31","duration":45,"tag":"Reading","createdAt":"2026-10-01T09:00:00.000Z","updatedAt":"2026-10-01T09:00:00.000Z"},
+{"id":"task_0003","title":"New year's planning","dueDate":"2026-01-01","duration":30,"tag":"Personal","createdAt":"2026-10-01T09:00:00.000Z","updatedAt":"2026-10-01T09:00:00.000Z"},
+{"id":"task_0004","title":"Prepare \"final\" slides","dueDate":"2026-10-10","duration":120,"tag":"Group Project","createdAt":"2026-10-01T09:00:00.000Z","updatedAt":"2026-10-01T09:00:00.000Z"},
+{"id":"task_0005","title":"<b>bold</b> poster draft","dueDate":"2026-10-12","duration":60,"tag":"Design","createdAt":"2026-10-01T09:00:00.000Z","updatedAt":"2026-10-01T09:00:00.000Z"},
+{"id":"task_0006","title":"Study group 14:00","dueDate":"2026-10-13","duration":90,"tag":"Study","createdAt":"2026-10-01T09:00:00.000Z","updatedAt":"2026-10-01T09:00:00.000Z"},
+{"id":"task_0007","title":"Review the the notes","dueDate":"2026-10-14","duration":25,"tag":"Study","createdAt":"2026-10-01T09:00:00.000Z","updatedAt":"2026-10-01T09:00:00.000Z"},
+{"id":"task_0008","title":"Quick check-in email","dueDate":"2026-10-15","duration":0,"tag":"Admin","createdAt":"2026-10-01T09:00:00.000Z","updatedAt":"2026-10-01T09:00:00.000Z"},
+{"id":"task_0009","title":"Math quiz prep","dueDate":"2026-10-16","duration":0.5,"tag":"Exam","createdAt":"2026-10-01T09:00:00.000Z","updatedAt":"2026-10-01T09:00:00.000Z"},
+{"id":"task_0010","title":"Biology exam revision","dueDate":"2026-10-20","duration":180,"tag":"Exam","createdAt":"2026-10-01T09:00:00.000Z","updatedAt":"2026-10-01T09:00:00.000Z"},
+{"id":"task_0011","title":"Thesis marathon","dueDate":"2026-11-30","duration":99999,"tag":"Research","createdAt":"2026-10-01T09:00:00.000Z","updatedAt":"2026-10-01T09:00:00.000Z"},
+{"id":"task_0012","title":"Club meeting 18:30","dueDate":"2026-10-11","duration":60,"tag":"Extra-curricular","createdAt":"2026-10-01T09:00:00.000Z","updatedAt":"2026-10-01T09:00:00.000Z"}
+]
 
