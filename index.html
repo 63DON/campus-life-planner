@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Campus Life Planner</title>
+        <link rel="stylesheet" href="styles/main.css">
+        <script type="module" src="scripts/ui.js"></script>
+    </head>
+    <body>
+        <a class="skip" href="#main">Skip to content</a>
+        <header>
+            <h1>Campus Life Planner</h1>
+            <nav aria-label="Main"><a href="#about">About</a><a href="#dash">Dashboard</a>
+        </header>
+        <main id="main">
+            <section id="about">
+                <h2>About</h2>
+                <p>Plan campus tasks, due dates and study time. Your data staysin this browser.</p>
+                <p>By Bayubahe Don . <a href="https://github.com/63DON">GitHub: 63DON</a> . <a href="mailto:b.don@alustudent.com">b.don@alustudent.com</a></p>
+            </section>
+            <section id="dash">
+                <h2>Dashboard</h2>
+                <p>Total tasks: <b id="count"></b> . Total time: <b id="time"></b> . Top tag: <b id="top"></b></p>
+                <div id="chart" aria-hidden="true"></div>
+                <p id="chart-sum" class="sr-only"></p>
+            </section>
+            <section id="tasks">
+                <h2>Tasks</h2>
+                <label for="q">Search (regex)</label>
+                <input id="q" aria-describedby="q-hint">
+                <p id="q-hint">Examples: \b\d{2}\b, (exam|quiz), \b(\w+)\s+\1\b</p>
+                <label for="sort">Sort by</label>
+                <select id="sort"><option value="due">Due date</option><option value="za">Title Z-A</option><option value="short">Duration low-high</option><option value="long">Duration high-low</option></select>
+                <div class="wrap">
+                    <table>
+                        <caption>Your Tasks</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Title</th>
+                                <th scope="col">Due</th>
+                                <th scope="col">Duration</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tasks-body">
+                        
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section id="add">
+                <h2>Add Task</h2>
+                <form id="form" novalidate>
+                    <label for="f-title">Title</label>
+                    <input id="f-title" name="title" aria-describedby="e-title"><small id="e-dueDate">Due date</small>
+                    <label for="f-duration">Duration</label>
+                    <input id="f-duration" name="duration" type="number" aria-describedby="e-duration"><small id="e-duration"></small>
+                    <label for="f-tag">Tag</label>
+                    <input id="f-tag" name="tag" aria-describedby="e-tag"><small id="e-tag"></small>
+                    <button>Add task</button>
+                </form>
+            </section>
+            <section id="settings">
+                <h2>Settings</h2>
+                <label for="unit">Show durations in</label>
+                <select id="unit"><option value="min">Minutes</option><option value="h">Hours</option></select>
+                <label for="cap">Time cap (minutes)</label>
+                <input id="cap" type="number" min="0">
+                <p><button id="export" type="button">Export JSON</button></p>
+                <label for="import">Import JSON</label>
+                <input id="import" type="file" accept=".json,application/json">
+            </section>
+        </main>
+        <div class="msgs"><p id="polite" role="status" aria-live="polite"></p><p id="loud" role="alert" aria-live="assertive"></p></div>
+        <footer><p>© 2026 Bayubahe Don</p></footer>
+        
+    </body>
+</html>
