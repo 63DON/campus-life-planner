@@ -12,7 +12,7 @@ const row = (t, re) => `<tr data-id="${t.id}">${t.id === editing
       + cell('duration', 'Duration in minutes', t.duration)
       + cell('tag', 'Tag', t.tag)
       + `<td><button data-act="save">Save</button> <button data-act="del" aria-label="Delete ${esc(t.title)}">Delete</button></td>`
-    : `<td>${highlight(t.title, re)}</td><td>${highlight(t.dueDate, re)}</td><td>${highlight(t.duration, re)}</td><td>${highlight(t.tag, re)}</td><td><button data-act="edit">Edit</button></td>`
+    : `<td>${highlight(t.title, re)}</td><td>${highlight(t.dueDate, re)}</td><td>${fmt(t.duration)}</td><td>${highlight(t.tag, re)}</td><td><button data-act="edit">Edit</button></td>`
 }</tr>`;
 
 function render(msg = '') {

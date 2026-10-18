@@ -4,7 +4,7 @@ nav { display: flex; flex-wrap: wrap; gap: 8px 16px; }
 .sr, .skip:not(:focus) { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
 label{display: block; margin-top: 8px; }
 small, #loud { display: block; color: #a00000; }
-input, select, button { font: inherit; }
+input, select, button { font: inherit; max-width: 100%; }
 .wrap { overflow-x: auto; }
 table { border-collapse: collapse; width: 100%; min-width: 560px; }
 th,td { border: 1px solid #999; padding: 4px 8px; text-align: left; }
