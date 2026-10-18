@@ -5,7 +5,8 @@ Plan campus tasks, due dates and study time. Vanilla HTML, CSS and JavaScript (E
 By Bayubahe Don ([63DON](https://github.com/63DON), b.don@alustudent.com).
 
 - Live URL: https://63don.github.io/campus-life-planner/
-- Demo video: link
+- Demo video: https://drive.google.com/file/d/10c90UBUme2Kz6a5nzomZn9F62vwTnArz/view?usp=sharing
+- Code Pause report(also in the demo video): https://drive.google.com/file/d/17Pxg7Mi6H6cV5f8lrcXcTIEjgju3PnUY/view?usp=sharing
 
 ## Data model
 `{ id: "task_0001", title, dueDate: "YYYY-MM-DD", duration: minutes, tag, createdAt, updatedAt }`
