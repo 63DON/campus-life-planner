@@ -11,27 +11,28 @@
         <a class="skip" href="#main">Skip to content</a>
         <header>
             <h1>Campus Life Planner</h1>
-            <nav aria-label="Main"><a href="#about">About</a><a href="#dash">Dashboard</a>
+            <nav aria-label="Main"><a href="#about">About</a><a href="#dash">Dashboard</a><a href="#tasks">Tasks</a><a href="#add">Add task</a><a href="#settings">Settings</a></nav>
         </header>
         <main id="main">
             <section id="about">
                 <h2>About</h2>
-                <p>Plan campus tasks, due dates and study time. Your data staysin this browser.</p>
+                <p>Plan campus tasks, due dates and study time. Your data stays in this browser.</p>
                 <p>By Bayubahe Don . <a href="https://github.com/63DON">GitHub: 63DON</a> . <a href="mailto:b.don@alustudent.com">b.don@alustudent.com</a></p>
             </section>
             <section id="dash">
                 <h2>Dashboard</h2>
                 <p>Total tasks: <b id="count"></b> . Total time: <b id="time"></b> . Top tag: <b id="top"></b></p>
                 <div id="chart" aria-hidden="true"></div>
-                <p id="chart-sum" class="sr-only"></p>
+                <p id="chart-sum" class="sr"></p>
             </section>
             <section id="tasks">
                 <h2>Tasks</h2>
                 <label for="q">Search (regex)</label>
                 <input id="q" aria-describedby="q-hint">
-                <p id="q-hint">Examples: \b\d{2}\b, (exam|quiz), \b(\w+)\s+\1\b</p>
+                <label><input id="ci" type="checkbox" checked> Ignore case</label>
+                <p id="q-hint">Examples: \b\d{2}:\d{2}\b, (exam|quiz), \b(\w+)\s+\1\b</p>
                 <label for="sort">Sort by</label>
-                <select id="sort"><option value="due">Due date</option><option value="za">Title Z-A</option><option value="short">Duration low-high</option><option value="long">Duration high-low</option></select>
+                <select id="sort"><option value="due">Due date</option><option value="az">Title A-Z</option><option value="za">Title Z-A</option><option value="short">Duration low-high</option><option value="long">Duration high-low</option></select>
                 <div class="wrap">
                     <table>
                         <caption>Your Tasks</caption>
@@ -40,11 +41,11 @@
                                 <th scope="col">Title</th>
                                 <th scope="col">Due</th>
                                 <th scope="col">Duration</th>
+                                <th scope="col">Tag</th>
+                                <th scope="col">Actions</th>
                             </tr>
                         </thead>
-                        <tbody id="tasks-body">
-                        
-                        </tbody>
+                        <tbody id="rows"></tbody>
                     </table>
                 </div>
             </section>
@@ -52,8 +53,10 @@
                 <h2>Add Task</h2>
                 <form id="form" novalidate>
                     <label for="f-title">Title</label>
-                    <input id="f-title" name="title" aria-describedby="e-title"><small id="e-dueDate">Due date</small>
-                    <label for="f-duration">Duration</label>
+                    <input id="f-title" name="title" aria-describedby="e-title"><small id="e-title"></small>
+                    <label for="f-due">Due date (YYYY-MM-DD)</label>
+                    <input id="f-due" name="dueDate" aria-describedby="e-dueDate"><small id="e-dueDate"></small>
+                    <label for="f-duration">Duration (minutes)</label>
                     <input id="f-duration" name="duration" type="number" aria-describedby="e-duration"><small id="e-duration"></small>
                     <label for="f-tag">Tag</label>
                     <input id="f-tag" name="tag" aria-describedby="e-tag"><small id="e-tag"></small>

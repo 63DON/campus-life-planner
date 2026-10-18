@@ -1,5 +1,3 @@
-# campus-life-planner
-
 # Campus Life Planner
 
 ## Overview

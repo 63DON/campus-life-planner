@@ -4,15 +4,15 @@ import { compile, filter, sort, highlight, esc } from './search.js';
 import { exportJSON, importJSON } from './storage.js';
 const $ = s => document.querySelector(s), form = $('#form'), polite = $('#polite'), loud = $('#loud');
 let editing = null;
-const norm = t=> ({ ...t, title: clean(t.title), duration: +t.duration }), formData = () => Object.fromEntries(new FormData(form));
+const norm = t =>({ ...t, title: clean(t.title), duration: +t.duration }), formData = () => Object.fromEntries(new FormData(form));
 const cell = (name, label, v) => `<td><input name="${name}" aria-label="${label}" value="${esc(v)}"></td>`;
 const row = (t, re) => `<tr data-id="${t.id}">${t.id === editing
     ? cell('title', 'Title', t.title)
       + cell('dueDate', 'Due date', t.dueDate)
       + cell('duration', 'Duration in minutes', t.duration)
       + cell('tag', 'Tag', t.tag)
-      + `<td><button data-act="save">save</button> <button data-act="del" aria-label="Delete ${esc(t.title)}">Delete</button></td>`
-    : `<td>${highlight(esc(t.title), re)}</td><td>${highlight(esc(t.dueDate), re)}</td><td>${highlight(esc(String(t.duration)), re)}</td><td>${highlight(esc(t.tag), re)}</td><td><button data-act="edit">edit</button></td>`
+      + `<td><button data-act="save">Save</button> <button data-act="del" aria-label="Delete ${esc(t.title)}">Delete</button></td>`
+    : `<td>${highlight(t.title, re)}</td><td>${highlight(t.dueDate, re)}</td><td>${highlight(t.duration, re)}</td><td>${highlight(t.tag, re)}</td><td><button data-act="edit">Edit</button></td>`
 }</tr>`;
 
 function render(msg = '') {

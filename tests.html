@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Life Planner Tests</title>
+</head>
+<body>
+    <h1>Tests</h1>
+    <ul id="out"></ul>
+    <script type="module">
+        import { RX, DUP, validate } from './scripts/validators.js';
+        import { compile, highlight } from './scripts/search.js';
+        const ok = (name, pass) => document.querySelector('#out').append(Object.assign(document.createElement('li'), { textContent: (pass ? 'PASS: ' : 'FAIL: ') + name }));
+        ok('title valid', RX.title[0].test('Study group 14:00'));
+        ok('title invalid (leading space)', !RX.title[0].test(' Study'));
+        ok('duration valid', RX.duration[0].test('90') && RX.duration[0].test('0.5'));
+        ok('duration invalid (leading zero)', !RX.duration[0].test('090'));
+        ok('date valid', RX.dueDate[0].test('2024-02-29'));
+        ok('date invalid (month 13)', !RX.dueDate[0].test('2024-13-01'));
+        ok('tag valid', RX.tag[0].test('Group Project'));
+        ok('tag invalid (double space)', !RX.tag[0].test('Group  Project'));
+        ok('duplicate word found', DUP.test('Review the the notes'));
+        ok('validate accepts a good task', Object.keys(validate({ title: 'Lab', dueDate: '2026-10-20', duration: 30, tag: 'Lab' })).length === 0);
+        ok('compile returns null on bad regex', compile('(', true) === null);
+        ok('highlight escapes HTML and marks matches', highlight('<b>exam</b>', compile('exam', true)) === '&lt;b&gt;<mark>exam</mark>&lt;/b&gt;');
+    </script>
+
+</body>
+</html>
